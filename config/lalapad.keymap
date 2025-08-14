@@ -209,7 +209,7 @@
             >;
         };
 
-        SECONDARY_LAYER {
+        symbol_LAYER {
             display-name = "secondary_layer";
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
@@ -222,18 +222,18 @@
             >;
         };
 
-        TERTIARY_LAYER {
+        numpad_LAYER {
             display-name = "tertiary_layer";
             bindings = <
-&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans   &trans   &trans   &trans   &trans   &trans  &trans  &trans  &trans  &trans  &trans
-                 &trans   &trans   &trans   &trans   &trans  &trans  &trans  &trans
+&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &none
+&trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &kp COLON     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &none         &none
+&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &none
+&trans  &trans   &trans   &trans   &trans   &trans   &none         &trans        &none         &none         &none         &none
+                 &trans   &trans   &trans   &trans   &trans        &trans        &trans        &trans
             >;
         };
 
-        SYSTEM_LAYER {
+        mouse_LAYER {
             display-name = "system_layer";
             sensor-bindings = <&scroll_down_up>, <&volume_up_down>;
 
