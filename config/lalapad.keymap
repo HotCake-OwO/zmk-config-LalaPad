@@ -178,6 +178,15 @@
             require-prior-idle-ms = <125>;
             bindings = <&kp>, <&kp>;
         };
+
+        volume_down_up: volume_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_VOLUME_UP>;
+
+            tap-ms = <20>;
+            label = "VOLUME_DOWN_UP";
+        };
     };
 
     keymap {
@@ -185,13 +194,13 @@
 
         DEFAULT_LAYER {
             display-name = "Default";
-            sensor-bindings = <&scroll_down_up>, <&volume_up_down>;
+            sensor-bindings = <&scroll_down_up>, <&volume_down_up>;
 
             bindings = <
 &kp ESC     &kp Q         &kp W         &kp E            &kp R                    &kp T                     &kp Y          &kp U                      &kp I            &kp O       &kp P           &kp BACKSPACE
 &kp LCTRL   &kp A         &kp S         &kp D            &kp F                    &kp G                     &kp H          &kp J                      &kp K            &kp L       &mt2 SEMI LBKT  &kp ENTER
 &kp LSHFT   &kp Z         &kp X         &kp C            &kp V                    &kp B                     &kp N          &kp M                      &kp COMMA        &kp PERIOD  &mt2 UP SLASH   &kp BACKSLASH
-&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 SPACE      &kp LANG_ZENKAKUHANKAKU  &lt TERTIARY_LAYER LANG2  &kp K_MUTE     &lt 2 LANG_ZENKAKUHANKAKU  &lt 1 SPACE      &kp LEFT    &kp DOWN        &kp RIGHT
+&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 SPACE      &kp LANG_ZENKAKUHANKAKU  &lt TERTIARY_LAYER LANG2  &kp C_MUTE     &lt 2 LANG_ZENKAKUHANKAKU  &lt 1 SPACE      &kp LEFT    &kp DOWN        &kp RIGHT
                           &allow_end    &allow_pagedown  &allow_home              &allow_pageup             &allow_pageup  &allow_home                &allow_pagedown  &allow_end
             >;
         };
@@ -201,11 +210,11 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&kp TILDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp PAGE_UP    &kp PRINTSCREEN  &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
-&trans     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp HOME       &kp END          &kp KP_ASTERISK  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
-&trans     &trans        &trans        &trans        &trans        &trans        &kp PAGE_DOWN  &kp KP_MINUS     &kp KP_PLUS      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
-&trans     &trans        &trans        &trans        &trans        &kp CAPS      &trans         &kp DELETE       &trans           &kp KP_NUMBER_0  &dot_comma       &kp KP_ENTER
-                         &trans        &trans        &trans        &trans        &trans         &trans           &trans           &trans
+&kp TILDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp AMPERSAND   &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS    &kp CARET
+&trans     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp LEFT_ARROW  &kp DOWN_ARROW    &kp UP_ARROW          &kp RIGHT_ARROW        &kp HOME     &kp END
+&trans     &trans        &trans        &trans        &trans        &trans        &kp DELETE      &none             &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT_SIGN  &kp PIPE
+&trans     &trans        &trans        &trans        &trans        &kp CAPS      &trans          &none             &trans                &kp KP_NUMBER_0        &dot_comma   &kp KP_ENTER
+                         &trans        &trans        &trans        &trans        &trans          &trans            &trans                &trans
             >;
         };
 
