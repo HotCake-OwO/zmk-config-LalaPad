@@ -14,6 +14,31 @@
 #define MOUSE_L_LAYER   6
 #define SCROLL_L_LAYER  7
 
+// JP_keylayout
+#define JP_DQUOTE       AT                // "
+#define JP_AMP          CARET             // &
+#define JP_QUOTE        AMPERSAND         // '
+#define JP_EQUAL        UNDER             // =
+#define JP_CARET        EQUAL             // ^
+#define JP_YEN          0x89              // ¥
+#define JP_PLUS         COLON             // +
+#define JP_TILDE        PLUS              // ~
+#define JP_PIPE         LS(0x89)          // |
+#define JP_AT           LEFT_BRACKET      // @
+#define JP_COLON        SINGLE_QUOTE      // :
+#define JP_ASTERISK     DOUBLE_QUOTES     // *
+#define JP_BACKQUOTE    LEFT_BRACE        // `
+#define JP_UNDERSCORE   LS(0x87)          // _
+#define JP_LBRACKET     RIGHT_BRACKET     // [
+#define JP_RBRACKET     BACKSLASH         // ]
+#define JP_LPAREN       ASTERISK          // (
+#define JP_RPAREN       LEFT_PARENTHESIS  // )
+#define JP_LBRACE       RIGHT_BRACE       // {
+#define JP_RBRACE       PIPE              // }
+#define JP_KANA         LANGUAGE_1        // かな
+#define JP_EISU         LANGUAGE_2        // 英数
+#define JP_HANZEN       GRAVE             // 半角/全角
+
 // Mouse Scroll Value
 
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
@@ -197,10 +222,10 @@
             sensor-bindings = <&scroll_down_up>, <&volume_down_up>;
 
             bindings = <
-&kp ESC     &kp Q         &kp W         &kp E            &kp R                    &kp T                     &kp Y          &kp U                      &kp I            &kp O       &kp P           &kp BACKSPACE
+&kp TAB     &kp Q         &kp W         &kp E            &kp R                    &kp T                     &kp Y          &kp U                      &kp I            &kp O       &kp P           &kp BACKSPACE
 &kp LCTRL   &kp A         &kp S         &kp D            &kp F                    &kp G                     &kp H          &kp J                      &kp K            &kp L       &mt2 SEMI LBKT  &kp ENTER
-&kp LSHFT   &kp Z         &kp X         &kp C            &kp V                    &kp B                     &kp N          &kp M                      &kp COMMA        &kp PERIOD  &mt2 UP SLASH   &kp BACKSLASH
-&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 SPACE      &kp LANG_ZENKAKUHANKAKU  &lt TERTIARY_LAYER LANG2  &kp C_MUTE     &lt 2 LANG_ZENKAKUHANKAKU  &lt 1 SPACE      &kp LEFT    &kp DOWN        &kp RIGHT
+&kp LSHFT   &kp Z         &kp X         &kp C            &kp V                    &kp B                     &kp N          &kp M                      &kp COMMA        &kp PERIOD  &mt2 UP SLASH   &kp JP_YEN
+&kp ESCAPE  &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 SPACE      &kp LANG_ZENKAKUHANKAKU  &lt TERTIARY_LAYER LANG2  &kp C_MUTE     &lt 2 JP_HANZEN            &lt 1 SPACE      &kp LEFT    &kp DOWN        &kp RIGHT
                           &allow_end    &allow_pagedown  &allow_home              &allow_pageup             &allow_pageup  &allow_home                &allow_pagedown  &allow_end
             >;
         };
@@ -210,9 +235,9 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&kp TILDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp AMPERSAND   &kp SINGLE_QUOTE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS    &kp CARET
+&kp TILDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp JP_AMP      &kp JP_QUOTE      &kp JP_LPAREN         &kp JP_RPAREN          &kp MINUS    &kp JP_CARET
 &trans     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp LEFT_ARROW  &kp DOWN_ARROW    &kp UP_ARROW          &kp RIGHT_ARROW        &kp HOME     &kp END
-&trans     &trans        &trans        &trans        &trans        &trans        &kp DELETE      &none             &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT_SIGN  &kp PIPE
+&trans     &trans        &trans        &trans        &trans        &trans        &kp DELETE      &none             &kp JP_LBRACKET       &kp JP_RBRACKET        JP_AT        &kp PIPE
 &trans     &trans        &trans        &trans        &trans        &kp CAPS      &trans          &none             &trans                &kp KP_NUMBER_0        &dot_comma   &kp KP_ENTER
                          &trans        &trans        &trans        &trans        &trans          &trans            &trans                &trans
             >;
