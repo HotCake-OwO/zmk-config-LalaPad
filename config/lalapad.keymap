@@ -66,6 +66,12 @@
     };
 };
 
+&lt {
+};
+
+&mt {
+};
+
 / {
     behaviors {
         // Encoder to Mouse Scroll
