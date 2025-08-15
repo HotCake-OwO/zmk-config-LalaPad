@@ -27,16 +27,16 @@
 &glidepoint_listener_R {
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,
-        // <&zip_temp_layer MOUSE_R_LAYER 500>;
+        // <&zip_xy_scaler 2 1>,,
+        // <&zip_temp_layer MOUSE_R_LAYER 500>;,
         <&zip_xy_scaler 7 3>;
 
     lowspeedmode {
         layers = <SECONDARY_LAYER>;
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            // <&zip_xy_scaler 3 4>,
-            // <&zip_temp_layer MOUSE_R_LAYER 500>;
+            // <&zip_xy_scaler 3 4>,,
+            // <&zip_temp_layer MOUSE_R_LAYER 500>;,
             <&zip_xy_scaler 3 4>;
     };
 
@@ -44,7 +44,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 8>;
     };
@@ -53,16 +53,16 @@
 &glidepoint_listener_L {
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,
-        // <&zip_temp_layer MOUSE_L_LAYER 500>;
+        // <&zip_xy_scaler 2 1>,,
+        // <&zip_temp_layer MOUSE_L_LAYER 500>;,
         <&zip_xy_scaler 7 3>;
 
     lowspeedmode {
         layers = <SECONDARY_LAYER>;
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            // <&zip_xy_scaler 3 4>,
-            // <&zip_temp_layer MOUSE_L_LAYER 500>;
+            // <&zip_xy_scaler 3 4>,,
+            // <&zip_temp_layer MOUSE_L_LAYER 500>;,
             <&zip_xy_scaler 3 4>;
     };
 
@@ -70,7 +70,7 @@
         layers = <SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 6>;
     };
@@ -221,11 +221,11 @@
             sensor-bindings = <&scroll_down_up>, <&volume_down_up>;
 
             bindings = <
-&kp TAB         &kp Q         &kp W         &kp E            &kp R        &kp T              &kp Y          &kp U        &kp I            &kp O       &kp P      &kp BACKSPACE
-&kp LCTRL       &kp A         &kp S         &kp D            &kp F        &kp G              &kp H          &kp J        &lt 5 K          &kp L       &kp SEMI   &lt 4 ENTER
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C            &kp V        &kp B              &kp N          &kp M        &kp COMMA        &kp PERIOD  &kp SLASH  &kp JP_YEN
-&kp ESCAPE      &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 SPACE      &kp GRAVE    &lt 2 PRINTSCREEN  &kp C_MUTE     &lt 2 GRAVE  &lt 1 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
-                              &allow_end    &allow_pagedown  &allow_home  &allow_pageup      &allow_pageup  &allow_home  &allow_pagedown  &allow_end
+&kp TAB         &kp Q         &kp W         &kp E            &kp R        &kp T                  &kp Y          &kp U        &kp I            &kp O       &kp P      &kp BACKSPACE
+&kp LCTRL       &kp A         &kp S         &kp D            &kp F        &kp G                  &kp H          &kp J        &lt 5 K          &kp L       &kp SEMI   &lt 4 ENTER
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C            &kp V        &kp B                  &kp N          &kp M        &kp COMMA        &kp PERIOD  &kp SLASH  &kp JP_YEN
+&kp ESCAPE      &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 SPACE      &kp GRAVE    &lt 2 LA(PRINTSCREEN)  &kp C_MUTE     &lt 2 GRAVE  &lt 1 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
+                              &allow_end    &allow_pagedown  &allow_home  &allow_pageup          &allow_pageup  &allow_home  &allow_pagedown  &allow_end
             >;
         };
 
@@ -234,11 +234,11 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&kp ESCAPE  &kp EXCLAMATION  &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT          &kp CARET       &kp AMPERSAND   &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp MINUS         &kp EQUAL
-&trans      &kp NUMBER_6     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW       &kp RIGHT_ARROW       &kp HOME          &kp END
-&trans      &trans           &trans        &trans        &trans        &trans               &kp DELETE      &none           &kp RIGHT_BRACKET  &kp BACKSLASH         &kp LEFT_BRACKET  &kp JP_PIPE
-&trans      &trans           &trans        &trans        &trans        &kp LA(PRINTSCREEN)  &trans          &none           &trans             &kp KP_NUMBER_0       &dot_comma        &kp KP_ENTER
-                             &trans        &trans        &trans        &trans               &trans          &trans          &trans             &trans
+&kp ESCAPE  &kp EXCLAMATION  &kp AT        &kp HASH      &kp DOLLAR    &kp PERCENT      &kp CARET       &kp AMPERSAND   &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp MINUS         &kp EQUAL
+&trans      &kp NUMBER_6     &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW       &kp RIGHT_ARROW       &kp HOME          &kp END
+&trans      &trans           &trans        &trans        &trans        &trans           &kp DELETE      &none           &kp RIGHT_BRACKET  &kp BACKSLASH         &kp LEFT_BRACKET  &kp JP_PIPE
+&trans      &trans           &trans        &trans        &trans        &kp PRINTSCREEN  &trans          &none           &trans             &kp KP_NUMBER_0       &dot_comma        &kp KP_ENTER
+                             &trans        &trans        &trans        &trans           &trans          &trans          &trans             &trans
             >;
         };
 
