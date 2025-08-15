@@ -27,16 +27,16 @@
 &glidepoint_listener_R {
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,,,,
-        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,
+        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,,
         <&zip_xy_scaler 2 1>;
 
     lowspeedmode {
         layers = <SECONDARY_LAYER>;
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            // <&zip_xy_scaler 3 4>,,,,,,,,,,,
-            // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,
+            // <&zip_xy_scaler 3 4>,,,,,,,,,,,,
+            // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,,
             <&zip_xy_scaler 3 4>;
     };
 
@@ -44,7 +44,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 8>;
     };
@@ -53,16 +53,16 @@
 &glidepoint_listener_L {
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,,,,
-        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,
+        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,,
         <&zip_xy_scaler 2 1>;
 
     lowspeedmode {
         layers = <SECONDARY_LAYER>;
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            // <&zip_xy_scaler 3 4>,,,,,,,,,,,
-            // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,
+            // <&zip_xy_scaler 3 4>,,,,,,,,,,,,
+            // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,,
             <&zip_xy_scaler 3 4>;
     };
 
@@ -70,7 +70,7 @@
         layers = <SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 6>;
     };
@@ -224,11 +224,11 @@
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
             bindings = <
-&kp TILDE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5         &kp CARET       &kp AMPERSAND   &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp MINUS         &kp EQUAL
-&trans     &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW       &kp RIGHT_ARROW       &kp HOME          &kp END
-&trans     &trans        &trans        &trans        &trans        &trans               &kp DELETE      &none           &kp RIGHT_BRACKET  &kp BACKSLASH         &kp LEFT_BRACKET  &kp JP_PIPE
-&trans     &trans        &trans        &trans        &trans        &kp LA(PRINTSCREEN)  &trans          &none           &trans             &kp KP_NUMBER_0       &dot_comma        &kp KP_ENTER
-                         &trans        &trans        &trans        &trans               &trans          &trans          &trans             &trans
+&kp ESCAPE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5         &kp CARET       &kp AMPERSAND   &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp MINUS         &kp EQUAL
+&trans      &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW       &kp RIGHT_ARROW       &kp HOME          &kp END
+&trans      &trans        &trans        &trans        &trans        &trans               &kp DELETE      &none           &kp RIGHT_BRACKET  &kp BACKSLASH         &kp LEFT_BRACKET  &kp JP_PIPE
+&trans      &trans        &trans        &trans        &trans        &kp LA(PRINTSCREEN)  &trans          &none           &trans             &kp KP_NUMBER_0       &dot_comma        &kp KP_ENTER
+                          &trans        &trans        &trans        &trans               &trans          &trans          &trans             &trans
             >;
         };
 
@@ -302,10 +302,10 @@
 
         JPKey_LAYER {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp JP_UNDERSCORE
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT_BRACE  &kp JP_UNDERSCORE
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
