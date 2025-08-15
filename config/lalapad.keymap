@@ -17,6 +17,7 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 // jp key layout
+
 #define JP_YEN          0x89              // ¥
 #define JP_PIPE         LS(0x89)          // |
 #define JP_UNDERSCORE   LS(0x87)          // _
@@ -26,16 +27,16 @@
 &glidepoint_listener_R {
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,
-        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,
+        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,
         <&zip_xy_scaler 2 1>;
 
     lowspeedmode {
         layers = <SECONDARY_LAYER>;
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            // <&zip_xy_scaler 3 4>,,,,,,,,
-            // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,
+            // <&zip_xy_scaler 3 4>,,,,,,,,,
+            // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,
             <&zip_xy_scaler 3 4>;
     };
 
@@ -43,7 +44,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 8>;
     };
@@ -52,16 +53,16 @@
 &glidepoint_listener_L {
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,
-        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,
+        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,
         <&zip_xy_scaler 2 1>;
 
     lowspeedmode {
         layers = <SECONDARY_LAYER>;
         input-processors =
             <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-            // <&zip_xy_scaler 3 4>,,,,,,,,
-            // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,
+            // <&zip_xy_scaler 3 4>,,,,,,,,,
+            // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,
             <&zip_xy_scaler 3 4>;
     };
 
@@ -69,7 +70,7 @@
         layers = <SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 6>;
     };
@@ -290,6 +291,16 @@
 
         SCROLL_L_LAYER {
             display-name = "scroll_l_layer";
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        JPKey_LAYER {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
