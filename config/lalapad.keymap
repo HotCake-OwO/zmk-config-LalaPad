@@ -207,7 +207,7 @@
         compatible = "zmk,combos";
 
         under_score {
-            bindings = <&kp A>;
+            bindings = <&kp JP_UNDERSCORE>;
             key-positions = <24 35>;
         };
     };
