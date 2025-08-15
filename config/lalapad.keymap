@@ -1,5 +1,6 @@
 #include <input/processors.dtsi>
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
@@ -27,24 +28,24 @@
 &glidepoint_listener_R {
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,
-        // <&zip_temp_layer MOUSE_R_LAYER 500>;,
+        // <&zip_xy_scaler 2 1>,,,
+        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,
         <&zip_xy_scaler 9 4>;
 
-//    lowspeedmode {
-//        layers = <SECONDARY_LAYER>;
-//        input-processors =
-//            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-//            // <&zip_xy_scaler 3 4>,,
-//            // <&zip_temp_layer MOUSE_R_LAYER 500>;,
-//            <&zip_xy_scaler 3 4>;
-//    };
+    //    lowspeedmode {
+    //        layers = <SECONDARY_LAYER>;
+    //        input-processors =
+    //            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+    //            // <&zip_xy_scaler 3 4>,,
+    //            // <&zip_temp_layer MOUSE_R_LAYER 500>;,
+    //            <&zip_xy_scaler 3 4>;
+    //    };
 
     scroller {
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 8>;
     };
@@ -53,24 +54,24 @@
 &glidepoint_listener_L {
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,
-        // <&zip_temp_layer MOUSE_L_LAYER 500>;,
+        // <&zip_xy_scaler 2 1>,,,
+        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,
         <&zip_xy_scaler 9 4>;
 
-//    lowspeedmode {
-//        layers = <SECONDARY_LAYER>;
-//        input-processors =
-//            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-//            // <&zip_xy_scaler 3 4>,,
-//            // <&zip_temp_layer MOUSE_L_LAYER 500>;,
-//            <&zip_xy_scaler 3 4>;
-//    };
+    //    lowspeedmode {
+    //        layers = <SECONDARY_LAYER>;
+    //        input-processors =
+    //            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
+    //            // <&zip_xy_scaler 3 4>,,
+    //            // <&zip_temp_layer MOUSE_L_LAYER 500>;,
+    //            <&zip_xy_scaler 3 4>;
+    //    };
 
     scroller {
         layers = <SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 6>;
     };
@@ -288,7 +289,7 @@
             >;
         };
 
-        MOUSE_L_LAYER {
+        UNUSED-MOUSE_L_LAYER {
             display-name = "mouse_l_layer";
             bindings = <
 &trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -299,7 +300,7 @@
             >;
         };
 
-        SCROLL_L_LAYER {
+        UNUSED-SCROLL_L_LAYER {
             display-name = "scroll_l_layer";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
@@ -307,6 +308,16 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans
+                      &trans        &trans        &trans        &trans        &trans  &trans  &trans  &trans
             >;
         };
     };
