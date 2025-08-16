@@ -30,8 +30,8 @@
     input-processors =
         <&zip_report_rate_limit 15>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,
-        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,
+        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,
         <&zip_xy_scaler 9 4>;
 
     //    lowspeedmode {
@@ -47,7 +47,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 8>;
     };
@@ -56,8 +56,8 @@
 &glidepoint_listener_L {
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,
-        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,
+        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,
         <&zip_xy_scaler 9 4>;
 
     //    lowspeedmode {
@@ -73,7 +73,7 @@
         layers = <SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 6>;
     };
@@ -218,6 +218,7 @@
         ctrl+alt+delete {
             bindings = <&kp LC(LA(DELETE))>;
             key-positions = <45 46 47>;
+            timeout-ms = <3000>;
         };
     };
 
