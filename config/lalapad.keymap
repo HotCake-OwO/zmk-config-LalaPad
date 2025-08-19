@@ -30,8 +30,8 @@
     input-processors =
         <&zip_report_rate_limit 9>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,,,
-        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,,,
+        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,
         <&zip_xy_scaler 9 4>;
 
     //    lowspeedmode {
@@ -47,7 +47,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 8>;
     };
@@ -57,8 +57,8 @@
     input-processors =
         <&zip_report_rate_limit 9>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,,,
-        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,,,
+        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,
         <&zip_xy_scaler 9 4>;
 
     //    lowspeedmode {
@@ -74,7 +74,7 @@
         layers = <SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 6>;
     };
@@ -217,6 +217,15 @@
         };
     };
 
+    macros {
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "NEW_MACRO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -225,11 +234,11 @@
             sensor-bindings = <&scroll_down_up>, <&volume_down_up>;
 
             bindings = <
-&kp TAB           &kp Q         &kp W         &kp E            &kp R        &kp T                  &kp Y          &kp U        &kp I            &kp O       &kp P      &kp BACKSPACE
-&kp LCTRL         &kp A         &kp S         &kp D            &kp F        &kp G                  &kp H          &kp J        &lt 5 K          &kp L       &kp SEMI   &lt 4 ENTER
-&lt 9 LEFT_SHIFT  &kp Z         &kp X         &kp C            &kp V        &kp B                  &kp N          &kp M        &kp COMMA        &kp PERIOD  &kp SLASH  &kp JP_YEN
-&none             &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 SPACE      &kp GRAVE    &lt 8 LA(PRINTSCREEN)  &kp C_MUTE     &lt 2 GRAVE  &lt 1 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
-                                &allow_end    &allow_pagedown  &allow_home  &allow_pageup          &allow_pageup  &allow_home  &allow_pagedown  &allow_end
+&kp TAB         &kp Q         &kp W         &kp E            &kp R        &kp T                  &kp Y          &kp U        &kp I            &kp O       &kp P      &kp BACKSPACE
+&kp LCTRL       &kp A         &kp S         &kp D            &kp F        &kp G                  &kp H          &kp J        &lt 5 K          &kp L       &kp SEMI   &lt 4 ENTER
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C            &kp V        &kp B                  &kp N          &kp M        &kp COMMA        &kp PERIOD  &kp SLASH  &kp JP_YEN
+&none           &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 SPACE      &kp GRAVE    &lt 8 LA(PRINTSCREEN)  &kp C_MUTE     &lt 2 GRAVE  &lt 1 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
+                              &allow_end    &allow_pagedown  &allow_home  &allow_pageup          &allow_pageup  &allow_home  &allow_pagedown  &allow_end
             >;
         };
 
@@ -247,7 +256,7 @@
         };
 
         numpad_LAYER {
-            display-name = "tertiary_layer";
+            display-name = "numpad_LAYER";
             bindings = <
 &trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans            &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &none
 &trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &kp SINGLE_QUOTE  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &none         &none
@@ -325,7 +334,7 @@
         };
 
         SHIFT_LAYER {
-            display-name = "Default";
+            display-name = "SHIFT_LAYER";
             bindings = <
 &kp TAB         &kp LS(Q)     &kp LS(W)     &kp LS(E)        &kp LS(R)     &kp LS(T)              &kp LS(Y)      &kp LS(U)    &kp LS(I)        &kp LS(O)       &kp LS(P)      &kp BACKSPACE
 &kp LCTRL       &kp LS(A)     &kp LS(S)     &kp LS(D)        &kp LS(F)     &kp LS(G)              &kp LS(H)      &kp LS(J)    &kp LS(K)        &kp LS(L)       &kp SEMI       &lt 4 ENTER
@@ -335,6 +344,15 @@
             >;
 
             sensor-bindings = <&scroll_down_up>, <&volume_down_up>;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        shift_simbolLayer {
+            if-layers = <9 1>;
+            then-layer = <1>;
         };
     };
 };
