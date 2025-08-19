@@ -224,7 +224,7 @@
             #binding-cells = <0>;
 
             bindings = <
-                &macro_tap_if_shift <JP_UNDERSCORE> <JP_YEN>
+                &macro_tap_if_shift JP_UNDERSCORE JP_YEN
             >;
         };
     };
