@@ -207,28 +207,6 @@
         };
     };
 
-    macros {
-        compatible = "zmk,macros";
-
-        yen_or_underscore_macro: yen_or_underscore_macro {
-            compatible = "zmk,behavior-macro";
-            label = "YEN_OR_UNDERSCORE_MACRO";
-            bindings = <&check_shift_macro>;
-        };
-    };
-
-    behaviors {
-        check_shift_macro: check_shift_macro {
-            compatible = "zmk,behavior-macro";
-            label = "CHECK_SHIFT_MACRO";
-            #binding-cells = <0>;
-
-            bindings = <
-                &macro_tap_if_shift JP_UNDERSCORE JP_YEN
-            >;
-        };
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -249,7 +227,7 @@
             bindings = <
 &kp TAB         &kp Q         &kp W         &kp E            &kp R        &kp T                  &kp Y          &kp U        &kp I            &kp O       &kp P      &kp BACKSPACE
 &kp LCTRL       &kp A         &kp S         &kp D            &kp F        &kp G                  &kp H          &kp J        &lt 5 K          &kp L       &kp SEMI   &lt 4 ENTER
-&kp LEFT_SHIFT  &kp Z         &kp X         &kp C            &kp V        &kp B                  &kp N          &kp M        &kp COMMA        &kp PERIOD  &kp SLASH  &yen_or_underscore_macro
+&kp LEFT_SHIFT  &kp Z         &kp X         &kp C            &kp V        &kp B                  &kp N          &kp M        &kp COMMA        &kp PERIOD  &kp SLASH  &kp JP_YEN
 &none           &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 SPACE      &kp GRAVE    &lt 8 LA(PRINTSCREEN)  &kp C_MUTE     &lt 2 GRAVE  &lt 1 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
                               &allow_end    &allow_pagedown  &allow_home  &allow_pageup          &allow_pageup  &allow_home  &allow_pagedown  &allow_end
             >;
