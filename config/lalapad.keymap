@@ -209,10 +209,10 @@
         yen_underscore: yen_underscore {
             compatible = "zmk,behavior-mod-morph";
             label = "YEN_UNDERSCORE";
-            bindings = <&kp JP_YEN>, <&kp JP_UNDERSCORE>;
+            bindings = <&kp JP_YEN>, <&kp 0x87>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LCTL)>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
