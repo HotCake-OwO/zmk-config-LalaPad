@@ -217,7 +217,7 @@
         };
 
         underScore {
-            bindings = <&kp A>;
+            bindings = <&kp JP_UNDERSCORE>;
             key-positions = <24 35>;
             timeout-ms = <5000>;
             slow-release;
