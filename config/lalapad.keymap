@@ -30,8 +30,8 @@
     input-processors =
         <&zip_report_rate_limit 9>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,
-        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,
+        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 9 4>;
 
     //    lowspeedmode {
@@ -47,7 +47,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 8>;
     };
@@ -57,8 +57,8 @@
     input-processors =
         <&zip_report_rate_limit 9>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,
-        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,
+        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 9 4>;
 
     //    lowspeedmode {
@@ -74,7 +74,7 @@
         layers = <SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 6>;
     };
@@ -264,6 +264,8 @@
 &trans  &trans   &trans   &trans   &trans   &trans   &kp C_MUTE        &trans        &none         &none         &none         &none
                  &trans   &trans   &trans   &trans   &trans            &trans        &trans        &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp 0 0>, <&scroll_up_down>;
         };
 
         mouse_LAYER {
