@@ -30,8 +30,8 @@
     input-processors =
         <&zip_report_rate_limit 9>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,,,
-        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,,,,,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,,,,
+        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 9 4>;
 
     //    lowspeedmode {
@@ -47,7 +47,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 8>;
     };
@@ -57,8 +57,8 @@
     input-processors =
         <&zip_report_rate_limit 9>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,,,
-        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,,,,,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,,,,
+        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 9 4>;
 
     //    lowspeedmode {
@@ -74,7 +74,7 @@
         layers = <SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 6>;
     };
@@ -261,7 +261,7 @@
 &trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans            &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &none
 &trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &kp SINGLE_QUOTE  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &none         &none
 &trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp NUMBER_0      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &none
-&trans  &trans   &trans   &trans   &trans   &trans   &kp N0            &trans        &none         &none         &none         &none
+&trans  &trans   &trans   &trans   &trans   &trans   &none             &trans        &none         &none         &none         &none
                  &trans   &trans   &trans   &trans   &trans            &trans        &trans        &trans
             >;
 
