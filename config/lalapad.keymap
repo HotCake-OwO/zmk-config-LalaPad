@@ -32,8 +32,8 @@
     input-processors =
         <&zip_report_rate_limit 9>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 9 4>;
 
     //    lowspeedmode {
@@ -49,7 +49,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 8>;
     };
@@ -59,8 +59,8 @@
     input-processors =
         <&zip_report_rate_limit 9>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 9 4>;
 
     //    lowspeedmode {
@@ -76,7 +76,7 @@
         layers = <UNUSED_SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 6>;
     };
@@ -216,6 +216,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT | MOD_RSFT)>;
         };
+
+        ios_asterisk: ios_asterisk {
+            compatible = "zmk,behavior-mod-morph";
+            label = "IOS_ASTERISK";
+            bindings = <&kp COLON>, <&kp ASTERISK>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
@@ -271,9 +280,9 @@
 
             bindings = <
 &kp TAB         &kp Q         &kp W         &kp E            &kp R        &kp T                   &kp Y          &kp U        &kp I            &kp O       &kp P      &kp BACKSPACE
-&kp LCTRL       &kp A         &kp S         &kp D            &kp F        &kp G                   &kp H          &kp J        &lt 8 K          &kp L       &kp SEMI   &lt 7 ENTER
+&kp LCTRL       &kp A         &kp S         &kp D            &kp F        &kp G                   &kp H          &kp J        &lt 9 K          &kp L       &kp SEMI   &lt 8 ENTER
 &kp LEFT_SHIFT  &kp Z         &kp X         &kp C            &kp V        &kp B                   &kp N          &kp M        &kp COMMA        &kp PERIOD  &kp SLASH  &yen_underscore
-&none           &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 SPACE      &kp GRAVE    &lt 11 LA(PRINTSCREEN)  &kp C_MUTE     &lt 4 GRAVE  &lt 2 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
+&none           &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 SPACE      &kp GRAVE    &lt 12 LA(PRINTSCREEN)  &kp C_MUTE     &lt 4 GRAVE  &lt 2 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
                               &allow_end    &allow_pagedown  &allow_home  &allow_pageup           &allow_pageup  &allow_home  &allow_pagedown  &allow_end
             >;
         };
@@ -282,9 +291,9 @@
             display-name = "ios_layer";
             bindings = <
 &kp TAB         &kp Q         &kp W         &kp E            &kp R        &kp T                   &kp Y          &kp U            &kp I            &kp O       &kp P      &kp BACKSPACE
-&kp LCMD        &kp A         &kp S         &kp D            &kp F        &kp G                   &kp H          &kp J            &lt 8 K          &kp L       &kp SEMI   &lt 7 ENTER
+&kp LCMD        &kp A         &kp S         &kp D            &kp F        &kp G                   &kp H          &kp J            &lt 9 K          &kp L       &kp SEMI   &lt 8 ENTER
 &kp LEFT_SHIFT  &kp Z         &kp X         &kp C            &kp V        &kp B                   &kp N          &kp M            &kp COMMA        &kp PERIOD  &kp SLASH  &kp NON_US_BACKSLASH
-&none           &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 SPACE      &kp GRAVE    &lt 11 LA(PRINTSCREEN)  &kp C_MUTE     &lt 4 LC(SPACE)  &lt 2 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
+&none           &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 SPACE      &kp GRAVE    &lt 12 LA(PRINTSCREEN)  &kp C_MUTE     &lt 4 LC(SPACE)  &lt 2 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
                               &allow_end    &allow_pagedown  &allow_home  &allow_pageup           &allow_pageup  &allow_home      &allow_pagedown  &allow_end
             >;
 
@@ -333,17 +342,17 @@
         ios_numpad_layer {
             display-name = "numpad_LAYER";
             bindings = <
-&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans        &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &none
-&trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &kp COLON     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &none         &none
-&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &none
-&trans  &trans   &trans   &trans   &trans   &trans   &none         &trans        &none         &none         &none         &none
-                 &trans   &trans   &trans   &trans   &trans        &trans        &trans        &trans
+&trans  &kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &none
+&trans  &kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &ios_asterisk  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &none         &none
+&trans  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &none
+&trans  &trans   &trans   &trans   &trans   &trans   &none          &trans        &none         &none         &none         &none
+                 &trans   &trans   &trans   &trans   &trans         &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp 0 0>, <&scroll_up_down>;
         };
 
-        mouse_LAYER {
+        win_mouse_LAYER {
             display-name = "system_layer";
             sensor-bindings = <&scroll_down_up>, <&volume_up_down>;
 
@@ -354,6 +363,19 @@
 &trans      &trans  &trans  &trans  &trans  &trans  &none               &kp LS(LC(TAB))  &kp LC(TAB)  &trans               &trans    &trans
                     &trans  &trans  &trans  &trans  &trans              &trans           &trans       &trans
             >;
+        };
+
+        ios_mouse_layer {
+            display-name = "system_layer";
+            bindings = <
+&kp ESCAPE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6              &kp F7           &kp F8       &kp F9               &kp F10   &kp F11
+&trans      &trans  &trans  &trans  &none   &none   &kp LA(LEFT_ARROW)  &mkp LCLK        &mkp RCLK    &kp LA(RIGHT_ARROW)  &kp HOME  &kp F12
+&trans      &trans  &trans  &trans  &trans  &trans  &kp F5              &kp LG(TAB)      &mkp MCLK    &trans               &trans    &trans
+&trans      &trans  &trans  &trans  &trans  &trans  &none               &kp LS(LG(TAB))  &kp LG(TAB)  &trans               &trans    &trans
+                    &trans  &trans  &trans  &trans  &trans              &trans           &trans       &trans
+            >;
+
+            sensor-bindings = <&scroll_down_up>, <&volume_up_down>;
         };
 
         MOUSE_v2_LAYER {
@@ -382,7 +404,7 @@
             display-name = "mouse_l_layer";
             bindings = <
 &trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&mo 10  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&mo 11  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &mkp MB5   &mkp MB4   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans     &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                    &trans     &trans     &trans  &trans  &trans  &trans  &trans  &trans
