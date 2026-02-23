@@ -35,8 +35,8 @@
     input-processors =
         <&zip_report_rate_limit 9>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // <&zip_temp_layer MOUSE_R_LAYER 500>;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 9 4>;
 
     //    lowspeedmode {
@@ -52,7 +52,7 @@
         layers = <SCROLL_R_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 8>;
     };
@@ -62,8 +62,8 @@
     input-processors =
         <&zip_report_rate_limit 9>,
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
-        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // <&zip_xy_scaler 2 1>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+        // <&zip_temp_layer MOUSE_L_LAYER 500>;,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
         <&zip_xy_scaler 9 4>;
 
     //    lowspeedmode {
@@ -79,7 +79,7 @@
         layers = <UNUSED_SCROLL_L_LAYER>;
         input-processors =
             <&zip_xy_to_scroll_mapper>,
-            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+            // <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_Y_INVERT)>,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
             <&zip_scroll_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>,
             <&zip_scroll_scaler 1 6>;
     };
@@ -296,7 +296,7 @@
 &kp TAB         &kp Q         &kp W         &kp E            &kp R        &kp T                   &kp Y          &kp U            &kp I            &kp O       &kp P      &kp BACKSPACE
 &kp LCMD        &kp A         &kp S         &kp D            &kp F        &kp G                   &kp H          &kp J            &lt 9 K          &kp L       &kp SEMI   &lt 8 ENTER
 &kp LEFT_SHIFT  &kp Z         &kp X         &kp C            &kp V        &kp B                   &kp N          &kp M            &kp COMMA        &kp PERIOD  &kp SLASH  &kp NON_US_BACKSLASH
-&none           &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 SPACE      &kp GRAVE    &lt 12 LA(PRINTSCREEN)  &kp C_MUTE     &lt 4 LC(SPACE)  &lt 2 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
+&kp CAPSLOCK    &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 SPACE      &kp GRAVE    &lt 12 LA(PRINTSCREEN)  &kp C_MUTE     &lt 4 LC(SPACE)  &lt 2 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
                               &allow_end    &allow_pagedown  &allow_home  &allow_pageup           &allow_pageup  &allow_home      &allow_pagedown  &allow_end
             >;
 
