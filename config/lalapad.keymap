@@ -230,6 +230,12 @@
         };
     };
 
+        ios_controlcenter: ios_controlcenter {
+            label = "IOS_CONTROLCENTER";
+            bindings = <&kp CAPSLOCK $kp C>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -303,7 +309,7 @@
 &kp TAB             &kp Q         &kp W         &kp E            &kp R        &kp T                   &kp Y          &kp U            &kp I            &kp O       &kp P      &kp BACKSPACE
 &kp LCMD            &kp A         &kp S         &kp D            &kp F        &kp G                   &kp H          &kp J            &lt 9 K          &kp L       &kp SEMI   &lt 8 ENTER
 &kp LEFT_SHIFT      &kp Z         &kp X         &kp C            &kp V        &kp B                   &kp N          &kp M            &kp COMMA        &kp PERIOD  &kp SLASH  &kp NON_US_BACKSLASH
-&ios_controlCenter  &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 SPACE      &kp GRAVE    &lt 12 LA(PRINTSCREEN)  &kp C_MUTE     &lt 4 LC(SPACE)  &lt 2 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
+&ios_controlcenter  &kp LEFT_WIN  &kp LEFT_ALT  &lt 6 SPACE      &kp GRAVE    &lt 12 LA(PRINTSCREEN)  &kp C_MUTE     &lt 4 LC(SPACE)  &lt 2 SPACE      &kp LEFT    &kp DOWN   &kp RIGHT
                                   &allow_end    &allow_pagedown  &allow_home  &allow_pageup           &allow_pageup  &allow_home      &allow_pagedown  &allow_end
             >;
 
