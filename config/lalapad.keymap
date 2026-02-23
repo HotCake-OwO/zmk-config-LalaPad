@@ -231,7 +231,7 @@
 
         ios_controlcenter: ios_controlcenter {
             label = "IOS_CONTROLCENTER";
-            bindings = <&kp CAPSLOCK>, <$kp C>;
+            bindings = <&kp CAPSLOCK $kp C>;
         };
     };
 
@@ -276,13 +276,6 @@
             bindings = <&bt BT_SEL 4>, <&macro_wait_time 200>, <&to 1>;
 
             label = "BT_IOS_4";
-        };
-
-        ios_controlCenter: ios_controlCenter {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp CAPSLOCK &kp C>;
-            label = "IOS_CONTROLCENTER";
         };
     };
 
