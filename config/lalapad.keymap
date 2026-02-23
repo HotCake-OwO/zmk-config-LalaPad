@@ -6,13 +6,15 @@
 #include <dt-bindings/zmk/pointing.h>
 
 #define DEFAULT_LAYER   0
-#define SECONDARY_LAYER 1
-#define TERTIARY_LAYER  2
-#define SYSTEM_LAYER    3
-#define MOUSE_R_LAYER   4
-#define SCROLL_R_LAYER  5
-#define MOUSE_L_LAYER   6
-#define SCROLL_L_LAYER  7
+#define IOS_LAYER 1
+#define symbol_LAYER  2
+#define numpad_LAYER    3
+#define mouse_LAYER   4
+#define MOUSE_v2_LAYER  5
+#define SCROLL_R_LAYER   6
+#define UNUSED-MOUSE_L_LAYER  7
+#define UNUSED-SCROLL_L_LAYER  8
+#define BT_LAYER  9
 
 // Mouse Scroll Value
 
