@@ -231,7 +231,7 @@
 
         ios_controlcenter: ios_controlcenter {
             label = "IOS_CONTROLCENTER";
-            bindings = <&kp CAPSLOCK $kp C>;
+            bindings = <&kp CAPSLOCK>, <$kp C>;
         };
     };
 
