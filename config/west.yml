@@ -6,8 +6,10 @@ manifest:
       url-base: https://github.com/ShiniNet/
     - name: caksoylar 
       url-base: https://github.com/caksoylar  
-    - name: badjeff
-      url-base: https://github.com/badjeff
+    #- name: badjeff
+    #  url-base: https://github.com/badjeff
+    - name: the-via
+      url-base: https://github.com
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -20,9 +22,13 @@ manifest:
       remote: caksoylar
       revision: v0.3
     # https://github.com/badjeff/zmk-input-processor-report-rate-limit
+    #- name: zmk-input-processor-report-rate-limit
+    #  remote: badjeff
+    #  revision: main
+    #  path: modules/zmk-input-processor-report-rate-limit
     - name: zmk-input-processor-report-rate-limit
-      remote: badjeff
-      revision: main
+      remote: the-via
+      revision: zephyr-3.5
       path: modules/zmk-input-processor-report-rate-limit
   self:
     path: config
