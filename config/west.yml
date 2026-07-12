@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/ShiniNet/
     - name: caksoylar 
       url-base: https://github.com/caksoylar  
-    - name: the-via
-      url-base: https://github.com
+    #- name: the-via
+    #  url-base: https://github.com
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -19,9 +19,9 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3
-    - name: zmk-input-processor-report-rate-limit
-      remote: the-via
-      revision: zephyr-3.5
-      path: modules/zmk-input-processor-report-rate-limit
+    #- name: zmk-input-processor-report-rate-limit
+    #  remote: the-via
+    #  revision: zephyr-3.5
+    #  path: modules/zmk-input-processor-report-rate-limit
   self:
     path: config
